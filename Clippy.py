@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import os
+
 import EST_id_gen
 
 
@@ -15,19 +16,14 @@ def draw_clippy(text):
     """ Draws Clippy with a speech bubble containing input text"""
     root = Tk()
     root.geometry('211x180-40-60')
-    root.title("Clippy")
-    root.resizable(width=FALSE, height=FALSE)
-    #root.overrideredirect(True) # Removes window title bar and frame
-    #root.attributes("-alpha", 0.5) # makes the whole thing transparent
+    root.overrideredirect(True)
 
-
-    clippy_top = PhotoImage(file='Images\Clippy_top.png')
-    clippy_bottom = PhotoImage(file='Images\Clippy_bottom.png')
-
-    ttk.Label(root, image=clippy_top, compound=CENTER, text="ID is " + text).grid()
-    ttk.Label(root, image=clippy_bottom).grid()
-
+    clippy_image = PhotoImage(file='Images\\Clippy.gif')
+    ttk.Label(root, image=clippy_image, compound=CENTER).grid()
+    ttk.Label(root, text="ID is " + text, background="#FFFFCC").place(x=45, y=20)
+    root.after(3000, root.destroy)
     root.mainloop()
+
 
 if __name__ == "__main__":
     random_id = EST_id_gen.gen_est_id()

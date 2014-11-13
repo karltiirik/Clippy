@@ -64,6 +64,7 @@ def get_century_digit(date):
         return ['7', '8']
     """
 
+
 def format_date(date):
     """
     Format date
@@ -119,6 +120,7 @@ def modulo_11(number, weights):
         sum += int(number[i]) * weights[i]
 
     return sum % 11
+
 
 if __name__ == "__main__":
     print(gen_est_id())
