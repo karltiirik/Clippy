@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import ttk
 import os
 
 import EST_id_gen
@@ -19,8 +18,8 @@ def draw_clippy(text):
     root.overrideredirect(True)
 
     clippy_image = PhotoImage(file='Images\\Clippy.gif')
-    ttk.Label(root, image=clippy_image, compound=CENTER).grid()
-    ttk.Label(root, text="ID is " + text, background="#FFFFCC").place(x=45, y=20)
+    Label(root, image=clippy_image, compound=CENTER).grid()
+    Label(root, text="ID is " + text, background="#FFFFCC").place(x=45, y=20)
     root.after(3000, root.destroy)
     root.mainloop()
 
