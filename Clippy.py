@@ -17,7 +17,7 @@ def draw_clippy(text):
     root.geometry('211x180-40-60')
     root.overrideredirect(True)
 
-    clippy_image = PhotoImage(file='Images\\Clippy.gif')
+    clippy_image = PhotoImage(file=os.path.join('Images', 'Clippy.gif'))
     Label(root, image=clippy_image, compound=CENTER).grid()
     Label(root, text="ID is " + text, background="#FFFFCC").place(x=45, y=20)
     root.after(3000, root.destroy)
